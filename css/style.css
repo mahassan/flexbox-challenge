@@ -4,6 +4,13 @@
     margin:0;
     box-sizing: border-box;
 }
+:root{
+    --DESKTOP: min-width: 375px;
+}
+h1,h2,p{
+    margin:0;
+    padding:0;
+}
 body{
     font-family: "Poppins", sans-serif;
     font-weight: 100;
@@ -20,7 +27,9 @@ header{
     background: orange;
     height:100px;
     align-content: center;
-    text-indent: 20px;
+    @media (min-width: 375px){
+        text-indent: 20px;
+    }
 }
 nav{
     background: lightgray;
@@ -36,11 +45,16 @@ li a{
 }
 main{
     display: flex;
-    padding: 10px 50px 0;
+    flex-direction: column;
+    padding:0 10px 0;
+    @media (min-width: 375px){
+        padding: 10px 20px 0;
+        flex-direction: row;
+    }
 }
 main section{
     flex-basis: 80%;
-
+    margin-bottom: 20px;
 }
 main aside ul{
     display: flex;
